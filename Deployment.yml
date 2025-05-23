@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-rs
+spec:
+   replicas: 4
+    matchLabels:
+     selector:
+        name: rama
+      template:
+       metadata:
+        name: my-pod
+        labels:
+          name: rama
+          app: chandra
+       spec:
+        containers:
+          - name: my-c01
+            image: ubuntu
+            ports:
+              - port: 80
+      
+     
